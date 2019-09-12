@@ -1,4 +1,3 @@
-import Sidebar from './Sidebar';
 import Content from './Content';
 import Row from './Row';
 import Column from './Column';
@@ -7,7 +6,6 @@ import ListItem from './ListItem';
 import Anchor from './Anchor';
 
 export {
-  Sidebar,
   Content,
   Row,
   Column,

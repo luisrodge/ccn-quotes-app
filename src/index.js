@@ -7,7 +7,7 @@ import Quotes from './screens/Quotes';
 import QuoteDetails from './screens/QuoteDetails';
 
 import theme from './utils/theme';
-import { Sidebar, Content } from './components/ui';
+import { Content } from './components/ui';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -25,11 +25,19 @@ const GlobalStyle = createGlobalStyle`
 `
 const Wrapper = styled.div`
   background-color: #fff;
-  width: 780px;
+  width: 800px;
   height: 500px;
   box-shadow: 1px 1px 32px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   border-radius: 3px;
+`;
+
+const Sidebar = styled.div`
+  flex: 0 0 240px;
+  padding: ${props => props.theme.spacing.lg} 0;
+  background: ${props => props.theme.colors.blue} 0;
+  color: #fff;
+  border-radius: 3px 0 0px 3px;
 `;
 
 const App = () => (
