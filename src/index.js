@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-
 import theme from './utils/theme';
 import Wrapper from './components/Wrapper';
+import Sidebar from './components/Sidebar';
+import Content from './components/Content';
 import './index.css';
 
 const GlobalStyle = createGlobalStyle`
@@ -23,7 +24,12 @@ const App = () => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
       <Wrapper>
-        <h1>CCN Quotes</h1>
+        <Sidebar>
+          <h3>Quotes</h3>
+        </Sidebar>
+        <Content>
+          <p>Main content section</p>
+        </Content>
       </Wrapper>
       <GlobalStyle />
     </React.Fragment>
