@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import theme from '../utils/theme';
-import { Row, Column, List, ListItem } from '../components/ui';
+import { Row, Column, List, ListItem, Title } from '../components/ui';
 
 const SearchRow = styled(Row)`
   padding: 0 ${props => props.theme.spacing.sm};
@@ -28,10 +28,10 @@ const Quotes = () => {
     <React.Fragment>
       <Row paddingX={`${theme.spacing.sm}`}>
         <Column>
-          <h2>Quotes</h2>
+          <Title>Quotes</Title>
         </Column>
         <Column width="50px" justify="flex-end">
-          <h2>10</h2>
+          <Title>10</Title>
         </Column>
       </Row>
       <Row padding={`${theme.spacing.sm}`}>

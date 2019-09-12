@@ -2,6 +2,8 @@ export default {
   fonts: {
     regular: 'Fira Sans, sans-serif',
     secondary: 'Source Sans Pro, sans-serif',
+    sm: "22px",
+    md: "28px"
   },
   spacing: {
     xs: '6px',

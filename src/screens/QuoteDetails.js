@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Plus, Edit, Trash, LinkExternal } from 'styled-icons/boxicons-regular';
 
-import { Row, Column, Anchor } from '../components/ui';
+import { Row, Column, Anchor, Title } from '../components/ui';
 
 const NewIcon = styled(Plus)`
   background: ${props => props.theme.colors.blue};
@@ -32,7 +32,7 @@ const QuoteDetails = () => {
     <QuoteWrapper>
       <HeaderRow>
         <Column>
-          <Anchor href="#">
+          <Anchor secondary href="#">
             <LinkExternal size={18} style={{ paddingRight: '5px' }} />
             View author profile
           </Anchor>
@@ -48,8 +48,8 @@ const QuoteDetails = () => {
           </Anchor>
         </Column>
       </HeaderRow>
-      <Row marginT="30px">
-        <h1>By Lucas Mildton</h1>
+      <Row marginT="40px">
+        <Title md>By Lucas Mildton</Title>
       </Row>
       <Row marginT="30px">
         <p style={{ lineHeight: '1.7rem' }}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>

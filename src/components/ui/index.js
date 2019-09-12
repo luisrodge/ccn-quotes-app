@@ -4,6 +4,7 @@ import Column from './Column';
 import List from './List';
 import ListItem from './ListItem';
 import Anchor from './Anchor';
+import Title from './Title';
 
 export {
   Content,
@@ -11,5 +12,6 @@ export {
   Column,
   List,
   ListItem,
-  Anchor
+  Anchor,
+  Title
 }
