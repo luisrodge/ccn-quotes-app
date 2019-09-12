@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 import Quotes from './screens/Quotes';
 import QuoteDetails from './screens/QuoteDetails';
+import NewQuote from './screens/NewQuote';
 
 import theme from './utils/theme';
 import { Content } from './components/ui';
@@ -49,7 +50,8 @@ const App = () => (
           <Route path='/' component={Quotes} />
         </Sidebar>
         <Content>
-          <Route path={`/quotes/:id`} component={QuoteDetails} />
+          <Route exact path={`/`} component={NewQuote} />
+          <Route exact path={`/quotes/:id`} component={QuoteDetails} />
         </Content>
       </Wrapper>
       <GlobalStyle />
