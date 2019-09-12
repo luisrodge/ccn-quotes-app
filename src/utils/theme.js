@@ -1,6 +1,6 @@
 export default {
   fonts: {
-    regular: 'PT Sans, sans-serif'
+    regular: 'Open Sans, sans-serif'
   },
   spacing: {
     xs: '6px',

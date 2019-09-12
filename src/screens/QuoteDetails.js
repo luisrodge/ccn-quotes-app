@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Plus } from 'styled-icons/boxicons-regular';
 
+import { Row, Column, Anchor } from '../components/ui';
+
+
 const NewIcon = styled(Plus)`
   background: ${props => props.theme.colors.blue};
   color: #fff;
@@ -12,7 +15,7 @@ const NewIcon = styled(Plus)`
   bottom: 20px;
   right: 40px;
   z-index: 999;
-  pointer: cursor;
+  cursor: pointer;
 `;
 
 const QuoteDetails = () => {
@@ -22,7 +25,7 @@ const QuoteDetails = () => {
       <br /><br />
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
       <br /><br />
-      <p><a href="#">View author profile</a></p>
+      <p><Anchor href="#">View author profile</Anchor></p>
       <NewIcon size={30} />
     </div>
   )

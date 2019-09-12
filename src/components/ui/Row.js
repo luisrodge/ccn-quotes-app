@@ -5,5 +5,6 @@ export default styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   padding: ${props => props.padding ? props.padding : props.theme.spacing.sm};
-  padding-top: ${props => props.paddingTop ? props.paddingTop : 0}
+  padding-top: ${props => props.paddingTop ? props.paddingTop : 0};
+  margin-top: ${props => props.marginTop ? props.marginTop : 0}
 `;
