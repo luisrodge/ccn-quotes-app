@@ -7,5 +7,9 @@ export default {
     sm: '16px',
     md: '24px',
     lg: '32px',
+  },
+  colors: {
+    gray: "#CACACA",
+    blue: "#0984e3"
   }
 }
