@@ -1,6 +1,6 @@
 export default {
   fonts: {
-    regular: 'Manjari, sans-serif'
+    regular: 'PT Sans, sans-serif'
   },
   spacing: {
     xs: '6px',
@@ -10,6 +10,7 @@ export default {
   },
   colors: {
     gray: "#CACACA",
-    blue: "#0984e3"
+    blue: "#0984e3",
+    lightBlue: "#54a0ff",
   }
 }

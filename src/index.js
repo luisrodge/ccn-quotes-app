@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 
 import Quotes from './screens/Quotes';
+import QuoteDetails from './screens/QuoteDetails';
 
 import theme from './utils/theme';
-import Wrapper from './components/Wrapper';
-import Sidebar from './components/Sidebar';
-import Content from './components/Content';
+import { Sidebar, Content } from './components/ui';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,6 +23,14 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 `
+const Wrapper = styled.div`
+  background-color: #fff;
+  width: 780px;
+  height: 500px;
+  box-shadow: 1px 1px 32px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  border-radius: 3px;
+`;
 
 const App = () => (
   <ThemeProvider theme={theme}>
@@ -32,7 +40,7 @@ const App = () => (
           <Quotes />
         </Sidebar>
         <Content>
-          <p>Main content section</p>
+          <QuoteDetails />
         </Content>
       </Wrapper>
       <GlobalStyle />
