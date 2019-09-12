@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 
+import Quotes from './screens/Quotes';
+
 import theme from './utils/theme';
 import Wrapper from './components/Wrapper';
 import Sidebar from './components/Sidebar';
 import Content from './components/Content';
-import './index.css';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -25,7 +26,7 @@ const App = () => (
     <React.Fragment>
       <Wrapper>
         <Sidebar>
-          <h3>Quotes</h3>
+          <Quotes />
         </Sidebar>
         <Content>
           <p>Main content section</p>
