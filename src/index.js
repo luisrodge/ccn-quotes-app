@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import styled from 'styled-components';
 
@@ -42,17 +43,17 @@ const Sidebar = styled.div`
 
 const App = () => (
   <ThemeProvider theme={theme}>
-    <React.Fragment>
+    <Router>
       <Wrapper>
         <Sidebar>
-          <Quotes />
+          <Route path='/' component={Quotes} />
         </Sidebar>
         <Content>
-          <QuoteDetails />
+          <Route path={`/quotes/:id`} component={QuoteDetails} />
         </Content>
       </Wrapper>
       <GlobalStyle />
-    </React.Fragment>
+    </Router>
   </ThemeProvider>
 )
 

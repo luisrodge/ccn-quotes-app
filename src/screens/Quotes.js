@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import theme from '../utils/theme';
 import { Row, Column, List, ListItem, Title } from '../components/ui';
@@ -39,11 +40,11 @@ const Quotes = () => {
       </Row>
       <List>
         <ListItem>
-          <p>Bob Cuzzy</p>
+          <Link to="/quotes/2323"><p>Bob Cuzzy</p></Link>
           <small>This is some dummy short text</small>
         </ListItem>
         <ListItem>
-          <p>Bob Cuzzy</p>
+          <Link to="/quotes/67443"><p>Bob Cuzzy</p></Link>
           <small>This is some dummy short text</small>
         </ListItem>
         <ListItem>
