@@ -12,24 +12,28 @@ const NewIcon = styled(Plus)`
   border-radius: 50%;
   position: absolute;
   bottom: 0px;
-  right: 10px;
+  right: 0;
   z-index: 999;
   cursor: pointer;
 `;
 
 const QuoteWrapper = styled.div`
-  position: "relative";
-  height: '100%';
+  position: relative;
+  height: 100%;
+`;
+
+const HeaderRow = styled(Row)`
+  padding-bottom: ${props => props.theme.spacing.sm};
+  border-bottom: 1px solid #f7f7f7;
 `;
 
 const QuoteDetails = () => {
   return (
     <QuoteWrapper>
-      <Row padding="0" style={{ borderBottom: '1px solid #f7f7f7', marginBottom: '30px', paddingBottom: '10px' }}>
+      <HeaderRow>
         <Column>
           <Anchor href="#">
             <LinkExternal size={18} style={{ paddingRight: '5px' }} />
-
             View author profile
           </Anchor>
         </Column>
@@ -43,10 +47,13 @@ const QuoteDetails = () => {
             Delete
           </Anchor>
         </Column>
+      </HeaderRow>
+      <Row marginT="30px">
+        <h1>By Lucas Mildton</h1>
       </Row>
-      <h1>By Lucas Mildton</h1>
-      <br /><br />
-      <p style={{ lineHeight: '1.7rem' }}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      <Row marginT="30px">
+        <p style={{ lineHeight: '1.7rem' }}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+      </Row>
       <NewIcon size={30} />
     </QuoteWrapper>
   )
