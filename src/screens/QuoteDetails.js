@@ -31,29 +31,29 @@ const QuoteWrapper = styled.div`
 const QuoteDetails = ({ match }) => {
   const [state, dispatch] = useContext(QuotesContext);
 
-  const { quotes, fetchingQuote, quoteError } = state;
+  const { quotes, fetchingQuote, quoteError, quote } = state;
 
   const quoteId = match.params.id;
 
-  const quote = quotes.find(quote => quote.id == quoteId);
+  const quoteObj = quotes.find(quote => quote.id == quoteId);
 
   useEffect(() => {
-    if (quote) {
-      dispatch({ type: 'GET_QUOTE_SUCCESS' });
+    if (quoteObj) {
+      dispatch({ type: 'GET_QUOTE_SUCCESS', quote: quoteObj });
       return;
     }
-    dispatch({ type: 'GET_QUOTE' });
+    // dispatch({ type: 'GET_QUOTE' });
     api
       .get(`/quotes/${quoteId}`)
       .then(res => {
-        console.log("OK")
+        console.log("FETCHED QUOTE", res);
         dispatch({ type: 'GET_QUOTE_SUCCESS', quote: res });
       })
       .catch(err => {
         console.log("errror", err);
         dispatch({ type: 'GET_QUOTE_FAILURE' });
       });
-  }, [dispatch, quote, quoteId]);
+  }, [dispatch, quoteId]);
 
   return (
     <QuoteWrapper>
