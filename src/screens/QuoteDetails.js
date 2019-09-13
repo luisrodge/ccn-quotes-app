@@ -1,8 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import { Plus, Edit, Trash, LinkExternal } from 'styled-icons/boxicons-regular';
+import { Plus } from 'styled-icons/boxicons-regular';
 
-import { Row, Column, Anchor, Title } from '../components/ui';
+import { Row } from '../components/ui';
+import api from '../utils/api';
+
+import Header from './quoteDetails/Header';
+import Body from './quoteDetails/Body';
 
 import { QuotesContext } from '../QuotesContext';
 
@@ -24,48 +28,49 @@ const QuoteWrapper = styled.div`
   height: 100%;
 `;
 
-const HeaderRow = styled(Row)`
-  padding-bottom: ${props => props.theme.spacing.sm};
-  border-bottom: 1px solid #f7f7f7;
-`;
-
 const QuoteDetails = ({ match }) => {
   const [state, dispatch] = useContext(QuotesContext);
 
-  const { quotes, fetchingQuotes } = state;
+  const { quotes, fetchingQuote, quoteError } = state;
 
   const quoteId = match.params.id;
 
-  if (fetchingQuotes) return null;
-
   const quote = quotes.find(quote => quote.id == quoteId);
+
+  useEffect(() => {
+    if (quote) {
+      dispatch({ type: 'GET_QUOTE_SUCCESS' });
+      return;
+    }
+    dispatch({ type: 'GET_QUOTE' });
+    api
+      .get(`/quotes/${quoteId}`)
+      .then(res => {
+        console.log("OK")
+        dispatch({ type: 'GET_QUOTE_SUCCESS', quote: res });
+      })
+      .catch(err => {
+        console.log("errror", err);
+        dispatch({ type: 'GET_QUOTE_FAILURE' });
+      });
+  }, [dispatch, quote, quoteId]);
 
   return (
     <QuoteWrapper>
-      <HeaderRow>
-        <Column>
-          <Anchor secondary href={quote.source} target="blank">
-            <LinkExternal size={18} style={{ paddingRight: '5px' }} />
-            View author profile
-          </Anchor>
-        </Column>
-        <Column width="170px" justify="flex-end">
-          <Anchor secondary href="#">
-            <Edit size={18} style={{ paddingRight: '5px' }} />
-            Edit
-          </Anchor>
-          <Anchor secondary href="#" style={{ marginLeft: '20px' }}>
-            <Trash size={18} style={{ paddingRight: '5px' }} />
-            Delete
-          </Anchor>
-        </Column>
-      </HeaderRow>
-      <Row marginT="40px">
-        <Title md>{quote.author}</Title>
-      </Row>
-      <Row marginT="30px">
-        <p style={{ lineHeight: '1.7rem' }}>{quote.body}</p>
-      </Row>
+      {fetchingQuote ? (
+        <p>loading...</p>
+      ) : (
+          quoteError === '' ? (
+            <React.Fragment>
+              <Header quote={quote} />
+              <Body quote={quote} />
+            </React.Fragment>
+          ) : (
+              <Row>
+                <h2>{quoteError}</h2>
+              </Row>
+            )
+        )}
       <NewIcon size={30} />
     </QuoteWrapper>
   )

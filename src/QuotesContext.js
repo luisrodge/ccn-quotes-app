@@ -4,7 +4,10 @@ export const QuotesContext = createContext({});
 
 const initialState = {
   fetchingQuotes: true,
-  quotes: []
+  quotes: [],
+  fetchingQuote: true,
+  quote: {},
+  quoteError: ''
 }
 
 const reducer = (state, action) => {
@@ -21,6 +24,30 @@ const reducer = (state, action) => {
     }
     case 'GET_QUOTES_FAILURE':
       return { ...state, fetchingQuotes: false };
+    case 'GET_QUOTE': {
+      return {
+        ...state,
+        fetchingQuote: true,
+      };
+    }
+    case 'GET_QUOTE_SUCCESS': {
+      const {
+        quote,
+      } = action
+      return {
+        ...state,
+        quote,
+        quoteError: '',
+        fetchingQuote: false,
+      };
+    }
+    case 'GET_QUOTE_FAILURE':
+      return {
+        ...state,
+        quote: {},
+        quoteError: 'Something went wrong! Please try again later.',
+        fetchingQuote: false,
+      };
     default:
       return state;
   }
