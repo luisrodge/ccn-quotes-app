@@ -10,6 +10,12 @@ const spacing = () => css`
   ${({ paddingY }) => paddingY && `
     padding: ${paddingY} 0;
   `}
+   ${({ paddingT }) => paddingT && `
+    padding-top: ${paddingT};
+  `}
+  ${({ paddingB }) => paddingB && `
+    padding-bottom: ${paddingB};
+  `}
   ${({ margin }) => margin && `
     margin: ${margin}
   `}

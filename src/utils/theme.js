@@ -2,6 +2,7 @@ export default {
   fonts: {
     regular: 'Fira Sans, sans-serif',
     secondary: 'Source Sans Pro, sans-serif',
+    xs: "16px",
     sm: "22px",
     md: "28px"
   },
@@ -16,5 +17,6 @@ export default {
     gray: "#CACACA",
     blue: "#0984e3",
     lightBlue: "#54a0ff",
+    red: '#eb4d4b'
   }
 }

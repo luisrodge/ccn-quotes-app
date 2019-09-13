@@ -2,7 +2,9 @@ import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { Row, Input, TextArea, Button } from '../../components/ui';
+import theme from '../../utils/theme';
+
+import { Row, Input, TextArea, Button, Text, Label } from '../../components/ui';
 
 const QuoteSchema = Yup.object().shape({
   author: Yup.string().required("Author can't be empty"),
@@ -16,6 +18,7 @@ const Form = () => (
       initialValues={{ author: '', body: '', source: '' }}
       validationSchema={QuoteSchema}
       onSubmit={(values, { setSubmitting }) => {
+        console.log("submit")
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
           setSubmitting(false);
@@ -30,44 +33,45 @@ const Form = () => (
         handleBlur,
         handleSubmit,
         isSubmitting,
-        /* and other goodies */
       }) => (
           <form onSubmit={handleSubmit}>
             <Row marginY="30px">
-              <label>Author</label>
+              <label for="author">Author</label>
               <Input
                 name="author"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.email}
+                value={values.author}
+                border={errors.author && touched.author && `1px solid ${theme.colors.red}`}
               />
-              {errors.email && touched.email && errors.email}
+              {errors.author && touched.author && <Text color={theme.colors.red} paddingT="10px">{errors.author}</Text>}
             </Row>
             <Row marginB="30px">
-              <label>Source</label>
+              <label for="source">Source</label>
               <Input
-                type="password"
-                name="password"
+                name="source"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.password}
+                value={values.source}
+                border={errors.source && touched.source && `1px solid ${theme.colors.red}`}
               />
-              {errors.password && touched.password && errors.password}
+              {errors.source && touched.source && <Text color={theme.colors.red} paddingT="10px">{errors.source}</Text>}
             </Row>
-            <Row marginT="30px" marginB="50px">
-              <label>Body</label>
+            <Row marginT="30px" marginB="40px">
+              <label for="body">Body</label>
               <TextArea
                 name="body"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.body}
-                rows={3}
+                rows={2}
+                border={errors.body && touched.body && `1px solid ${theme.colors.red}`}
               ></TextArea>
-              {errors.body && touched.body && errors.body}
+              {errors.body && touched.body && <Text color={theme.colors.red} paddingT="10px">{errors.body}</Text>}
             </Row>
             <Button type="submit" disabled={isSubmitting}>
               Create Quote
-          </Button>
+            </Button>
           </form>
         )}
     </Formik>
