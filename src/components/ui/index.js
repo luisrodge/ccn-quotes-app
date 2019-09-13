@@ -5,6 +5,9 @@ import List from './List';
 import ListItem from './ListItem';
 import Anchor from './Anchor';
 import Title from './Title';
+import Input from './Input';
+import TextArea from './TextArea';
+import Button from './Button';
 
 export {
   Content,
@@ -13,5 +16,8 @@ export {
   List,
   ListItem,
   Anchor,
-  Title
+  Title,
+  Input,
+  TextArea,
+  Button
 }

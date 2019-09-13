@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 import theme from '../utils/theme';
-import { Row, Column, List, ListItem, Title } from '../components/ui';
-
-const SearchRow = styled(Row)`
-  padding: 0 ${props => props.theme.spacing.sm};
-  padding-top: ${props => props.theme.spacing.sm};
-  padding-bottom: ${props => props.theme.spacing.xs};
-`;
+import { Row, Column, List, ListItem, Title, Anchor } from '../components/ui';
 
 const SearchBar = styled.input`
   width: 100%;
@@ -24,12 +18,20 @@ const SearchBar = styled.input`
   }
 `;
 
+const StyledLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+`;
+
 const Quotes = () => {
   return (
     <React.Fragment>
       <Row paddingX={`${theme.spacing.sm}`}>
         <Column>
-          <Title>Quotes</Title>
+          <StyledLink to="/"><Title>Quotes</Title></StyledLink>
         </Column>
         <Column width="50px" justify="flex-end">
           <Title>10</Title>
@@ -40,11 +42,11 @@ const Quotes = () => {
       </Row>
       <List>
         <ListItem>
-          <Link to="/quotes/2323"><p>Bob Cuzzy</p></Link>
+          <StyledLink to="/quotes/2323"><p>Bob Cuzzy</p></StyledLink>
           <small>This is some dummy short text</small>
         </ListItem>
         <ListItem>
-          <Link to="/quotes/67443"><p>Bob Cuzzy</p></Link>
+          <StyledLink to="/quotes/67443"><p>Bob Cuzzy</p></StyledLink>
           <small>This is some dummy short text</small>
         </ListItem>
         <ListItem>
