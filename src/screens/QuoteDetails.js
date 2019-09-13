@@ -46,7 +46,6 @@ const QuoteDetails = ({ match }) => {
     api
       .get(`/quotes/${quoteId}`)
       .then(res => {
-        console.log("FETCHED QUOTE", res);
         dispatch({ type: 'GET_QUOTE_SUCCESS', quote: res });
       })
       .catch(err => {

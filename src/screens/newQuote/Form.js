@@ -1,23 +1,20 @@
 import React from 'react';
 import { Formik } from 'formik';
+import * as Yup from 'yup';
+
 import { Row, Input, TextArea, Button } from '../../components/ui';
 
+const QuoteSchema = Yup.object().shape({
+  author: Yup.string().required("Author can't be empty"),
+  body: Yup.string().required("Body can't be empty"),
+  source: Yup.string().url().required("Source can't be empty")
+});
 
 const Form = () => (
   <div>
     <Formik
-      initialValues={{ email: '', password: '', body: '' }}
-      validate={values => {
-        let errors = {};
-        if (!values.email) {
-          errors.email = 'Required';
-        } else if (
-          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = 'Invalid email address';
-        }
-        return errors;
-      }}
+      initialValues={{ author: '', body: '', source: '' }}
+      validationSchema={QuoteSchema}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
@@ -39,8 +36,7 @@ const Form = () => (
             <Row marginY="30px">
               <label>Author</label>
               <Input
-                type="email"
-                name="email"
+                name="author"
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
