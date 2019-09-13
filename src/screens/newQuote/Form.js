@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import PropTypes from 'prop-types';
 
 import theme from '../../utils/theme';
 
@@ -12,17 +13,14 @@ const QuoteSchema = Yup.object().shape({
   source: Yup.string().url().required("Source can't be empty")
 });
 
-const Form = () => (
+const Form = ({ createQuote }) => (
   <div>
     <Formik
       initialValues={{ author: '', body: '', source: '' }}
       validationSchema={QuoteSchema}
       onSubmit={(values, { setSubmitting }) => {
         console.log("submit")
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
+        createQuote(values, setSubmitting);
       }}
     >
       {({
@@ -77,5 +75,9 @@ const Form = () => (
     </Formik>
   </div>
 );
+
+Form.propTypes = {
+  createQuote: PropTypes.func.isRequired,
+};
 
 export default Form;
