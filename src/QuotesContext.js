@@ -7,7 +7,8 @@ const initialState = {
   quotes: [],
   fetchingQuote: true,
   quote: {},
-  quoteError: ''
+  quoteError: '',
+  creatingQuote: false
 }
 
 const reducer = (state, action) => {
@@ -47,6 +48,21 @@ const reducer = (state, action) => {
         quote: {},
         quoteError: 'Something went wrong! Please try again later.',
         fetchingQuote: false,
+      };
+    case 'CREATE_QUOTE_SUCCESS': {
+      const {
+        quote,
+      } = action
+      return {
+        ...state,
+        quotes: [quote, ...state.quotes],
+        creatingQuote: false,
+      };
+    }
+    case 'CREATE_QUOTE_FAILURE':
+      return {
+        ...state,
+        creatingQuote: false,
       };
     default:
       return state;

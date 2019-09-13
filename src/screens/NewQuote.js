@@ -6,10 +6,10 @@ import api from '../utils/api';
 import { QuotesContext } from '../QuotesContext';
 
 
-const NewQuote = (values, setSubmitting) => {
+const NewQuote = () => {
   const [state, dispatch] = useContext(QuotesContext);
 
-  const createQuote = () => {
+  const createQuote = (values, setSubmitting) => {
     api
       .post('/quotes', values)
       .then(res => {
