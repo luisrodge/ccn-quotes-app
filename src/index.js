@@ -40,6 +40,7 @@ const Sidebar = styled.div`
   background: ${props => props.theme.colors.blue} 0;
   color: #fff;
   border-radius: 3px 0 0px 3px;
+  overflow-y: scroll;
 `;
 
 const App = () => (
