@@ -55,6 +55,23 @@ const reducer = (state, action) => {
 const Quotes = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    api
+      .get(`/quotes`)
+      .then(res => {
+        dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: res });
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+        dispatch({ type: 'GET_QUOTES_FAILURE' });
+      });
+  }, []);
+
+  const { loading, quotes } = state;
+
+  if (loading) return null;
+
   return (
     <React.Fragment>
       <Row paddingX={`${theme.spacing.sm}`}>
@@ -69,30 +86,12 @@ const Quotes = () => {
         <SearchBar placeholder="Search..." />
       </Row>
       <List>
-        <ListItem>
-          <StyledLink to="/quotes/2323"><p>Bob Cuzzy</p></StyledLink>
-          <small>This is some dummy short text</small>
-        </ListItem>
-        <ListItem>
-          <StyledLink to="/quotes/67443"><p>Bob Cuzzy</p></StyledLink>
-          <small>This is some dummy short text</small>
-        </ListItem>
-        <ListItem>
-          <p>Bob Cuzzy</p>
-          <small>This is some dummy short text</small>
-        </ListItem>
-        <ListItem>
-          <p>Bob Cuzzy</p>
-          <small>This is some dummy short text</small>
-        </ListItem>
-        <ListItem>
-          <p>Bob Cuzzy</p>
-          <small>This is some dummy short text</small>
-        </ListItem>
-        <ListItem>
-          <p>Bob Cuzzy</p>
-          <small>This is some dummy short text</small>
-        </ListItem>
+        {quotes.map(quote => (
+          <ListItem key={quote.id}>
+            <StyledLink to={`/quotes/${quote.id}`}><p>{quote.author}</p></StyledLink>
+            <small>This is some dummy short text</small>
+          </ListItem>
+        ))}
       </List>
     </React.Fragment>
   )
