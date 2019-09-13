@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { Plus, Edit, Trash, LinkExternal } from 'styled-icons/boxicons-regular';
 
 import { Row, Column, Anchor, Title } from '../components/ui';
+
+import { QuotesContext } from '../QuotesContext';
 
 const NewIcon = styled(Plus)`
   background: ${props => props.theme.colors.blue};
@@ -27,12 +29,22 @@ const HeaderRow = styled(Row)`
   border-bottom: 1px solid #f7f7f7;
 `;
 
-const QuoteDetails = () => {
+const QuoteDetails = ({ match }) => {
+  const [state, dispatch] = useContext(QuotesContext);
+
+  const { quotes, fetchingQuotes } = state;
+
+  const quoteId = match.params.id;
+
+  if (fetchingQuotes) return null;
+
+  const quote = quotes.find(quote => quote.id == quoteId);
+
   return (
     <QuoteWrapper>
       <HeaderRow>
         <Column>
-          <Anchor secondary href="#">
+          <Anchor secondary href={quote.source} target="blank">
             <LinkExternal size={18} style={{ paddingRight: '5px' }} />
             View author profile
           </Anchor>
@@ -49,10 +61,10 @@ const QuoteDetails = () => {
         </Column>
       </HeaderRow>
       <Row marginT="40px">
-        <Title md>By Lucas Mildton</Title>
+        <Title md>{quote.author}</Title>
       </Row>
       <Row marginT="30px">
-        <p style={{ lineHeight: '1.7rem' }}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        <p style={{ lineHeight: '1.7rem' }}>{quote.body}</p>
       </Row>
       <NewIcon size={30} />
     </QuoteWrapper>

@@ -16,11 +16,11 @@ const reducer = (state, action) => {
       return {
         ...state,
         quotes,
-        loading: false,
+        fetchingQuotes: false,
       };
     }
     case 'GET_QUOTES_FAILURE':
-      return { ...state, loading: false };
+      return { ...state, fetchingQuotes: false };
     default:
       return state;
   }
