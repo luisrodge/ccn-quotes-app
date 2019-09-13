@@ -42,17 +42,15 @@ const QuoteDetails = ({ match }) => {
       dispatch({ type: 'GET_QUOTE_SUCCESS', quote: quoteObj });
       return;
     }
-    // dispatch({ type: 'GET_QUOTE' });
     api
       .get(`/quotes/${quoteId}`)
       .then(res => {
         dispatch({ type: 'GET_QUOTE_SUCCESS', quote: res });
       })
       .catch(err => {
-        console.log("errror", err);
         dispatch({ type: 'GET_QUOTE_FAILURE' });
       });
-  }, [dispatch, quoteId]);
+  }, [dispatch, quoteId, quoteObj]);
 
   return (
     <QuoteWrapper>

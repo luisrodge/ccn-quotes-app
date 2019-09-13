@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
 import { Edit, Trash, LinkExternal } from 'styled-icons/boxicons-regular';
 
 import { Row, Column, Anchor } from '../../components/ui';
@@ -31,5 +33,9 @@ const Header = ({ quote }) => {
     </HeaderRow>
   )
 }
+
+Header.propTypes = {
+  quote: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default Header;

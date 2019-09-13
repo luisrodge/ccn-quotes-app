@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import theme from '../../utils/theme';
 
-import { Row, Input, TextArea, Button, Text, Label } from '../../components/ui';
+import { Row, Input, TextArea, Button, Text } from '../../components/ui';
 
 const QuoteSchema = Yup.object().shape({
   author: Yup.string().required("Author can't be empty"),
@@ -36,7 +36,7 @@ const Form = () => (
       }) => (
           <form onSubmit={handleSubmit}>
             <Row marginY="30px">
-              <label for="author">Author</label>
+              <label htmlFor="author">Author</label>
               <Input
                 name="author"
                 onChange={handleChange}
@@ -47,7 +47,7 @@ const Form = () => (
               {errors.author && touched.author && <Text color={theme.colors.red} paddingT="10px">{errors.author}</Text>}
             </Row>
             <Row marginB="30px">
-              <label for="source">Source</label>
+              <label htmlFor="source">Source</label>
               <Input
                 name="source"
                 onChange={handleChange}
@@ -58,7 +58,7 @@ const Form = () => (
               {errors.source && touched.source && <Text color={theme.colors.red} paddingT="10px">{errors.source}</Text>}
             </Row>
             <Row marginT="30px" marginB="40px">
-              <label for="body">Body</label>
+              <label htmlFor="body">Body</label>
               <TextArea
                 name="body"
                 onChange={handleChange}

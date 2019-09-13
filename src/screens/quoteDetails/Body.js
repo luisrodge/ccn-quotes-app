@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Row, Title } from '../../components/ui';
 
@@ -14,5 +15,9 @@ const Body = ({ quote }) => {
     </React.Fragment>
   )
 }
+
+Body.propTypes = {
+  quote: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default Body;
