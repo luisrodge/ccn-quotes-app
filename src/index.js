@@ -11,6 +11,8 @@ import NewQuote from './screens/NewQuote';
 import theme from './utils/theme';
 import { Content } from './components/ui';
 
+import { QuotesProvider } from './QuotesContext';
+
 const GlobalStyle = createGlobalStyle`
   body {
     background: #fafafa;
@@ -46,16 +48,18 @@ const Sidebar = styled.div`
 const App = () => (
   <ThemeProvider theme={theme}>
     <Router>
-      <Wrapper>
-        <Sidebar>
-          <Route path='/' component={Quotes} />
-        </Sidebar>
-        <Content>
-          <Route exact path={`/`} component={NewQuote} />
-          <Route exact path={`/quotes/:id`} component={QuoteDetails} />
-        </Content>
-      </Wrapper>
-      <GlobalStyle />
+      <QuotesProvider>
+        <Wrapper>
+          <Sidebar>
+            <Route path='/' component={Quotes} />
+          </Sidebar>
+          <Content>
+            <Route exact path={`/`} component={NewQuote} />
+            <Route exact path={`/quotes/:id`} component={QuoteDetails} />
+          </Content>
+        </Wrapper>
+        <GlobalStyle />
+      </QuotesProvider>
     </Router>
   </ThemeProvider>
 )
