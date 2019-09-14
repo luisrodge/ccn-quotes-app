@@ -16,7 +16,11 @@ const QuoteSchema = Yup.object().shape({
 const Form = ({ quote, updateQuote }) => (
   <div>
     <Formik
-      initialValues={{ author: '', body: '', source: '' }}
+      initialValues={{
+        author: quote.author,
+        body: quote.body,
+        source: quote.source
+      }}
       validationSchema={QuoteSchema}
       onSubmit={(values, { setSubmitting }) => {
         console.log("submit")
@@ -68,7 +72,7 @@ const Form = ({ quote, updateQuote }) => (
               {errors.body && touched.body && <Text color={theme.colors.red} paddingT="10px">{errors.body}</Text>}
             </Row>
             <Button type="submit" disabled={isSubmitting}>
-              Create Quote
+              Update Quote
             </Button>
           </form>
         )}

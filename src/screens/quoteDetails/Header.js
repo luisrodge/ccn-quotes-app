@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Edit, Trash, LinkExternal } from 'styled-icons/boxicons-regular';
 
-import { Row, Column, Anchor } from '../../components/ui';
+import { Row, Column, Anchor, StyledLink } from '../../components/ui';
 
 const HeaderRow = styled(Row)`
   padding-bottom: ${props => props.theme.spacing.sm};
@@ -20,10 +20,10 @@ const Header = ({ quote, deleteQuote }) => {
           </Anchor>
       </Column>
       <Column width="170px" justify="flex-end">
-        <Anchor secondary href="#">
+        <StyledLink secondary to={`/quotes/${quote.id}/edit`}>
           <Edit size={18} style={{ paddingRight: '5px' }} />
           Edit
-          </Anchor>
+          </StyledLink>
         <Anchor
           href="#"
           onClick={() => deleteQuote(quote.id)}

@@ -73,6 +73,15 @@ const reducer = (state, action) => {
         quotes: state.quotes.filter(quote => quote.id !== quoteId)
       };
     }
+    case 'UPDATE_QUOTE_SUCCESS': {
+      const {
+        quote,
+      } = action
+      return {
+        ...state,
+        quotes: state.quotes.map(q => q.id === quote.id ? quote : q)
+      };
+    }
     default:
       return state;
   }

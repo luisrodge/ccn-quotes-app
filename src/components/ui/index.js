@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import spacing from './spacing';
 
@@ -27,6 +28,25 @@ const Label = styled.label`
   position: relative;
 `;
 
+const StyledLink = styled(Link)`
+  font-family: ${props => props.theme.fonts.secondary};
+  color: ${props => props.secondary ? props.theme.colors.gray : props.theme.colors.lightBlue};
+  color: ${props =>
+    props.secondary && props.theme.colors.gray ||
+    props.primary && props.theme.colors.blue ||
+    '#fff'
+  };
+  text-decoration: none;
+  &:hover, &:focus {
+    text-decoration: none;
+    color: ${props =>
+    props.secondary && props.theme.colors.gray ||
+    props.primary && props.theme.colors.blue ||
+    '#fff'
+  };
+  }
+`;
+
 export {
   Content,
   Row,
@@ -39,5 +59,6 @@ export {
   TextArea,
   Button,
   Text,
-  Label
+  Label,
+  StyledLink
 }

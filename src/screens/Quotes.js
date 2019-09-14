@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import api from '../utils/api';
 import theme from '../utils/theme';
-import { Row, Column, List, ListItem, Title } from '../components/ui';
+import { Row, Column, List, ListItem, Title, StyledLink } from '../components/ui';
 
 import { QuotesContext } from '../QuotesContext';
 
@@ -18,14 +18,6 @@ const SearchBar = styled.input`
   color: #fff;
   ::placeholder {
     color: #fff;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  color: #fff;
-  text-decoration: none;
-  &:hover, &:focus {
-    text-decoration: none;
   }
 `;
 
