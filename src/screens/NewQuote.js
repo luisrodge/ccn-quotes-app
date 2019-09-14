@@ -5,8 +5,7 @@ import { Row } from '../components/ui';
 import api from '../utils/api';
 import { QuotesContext } from '../QuotesContext';
 
-
-const NewQuote = () => {
+const NewQuote = ({ history }) => {
   const [state, dispatch] = useContext(QuotesContext);
 
   const createQuote = (values, setSubmitting) => {
@@ -15,6 +14,7 @@ const NewQuote = () => {
       .then(res => {
         dispatch({ type: 'CREATE_QUOTE_SUCCESS', quote: res });
         setSubmitting(false);
+        history.push(`/quotes/${res.id}`)
       })
       .catch(err => {
         dispatch({ type: 'CREATE_QUOTE_FAILURE' });
