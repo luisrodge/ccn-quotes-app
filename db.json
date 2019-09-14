@@ -65,36 +65,6 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
       "source": "https://www.lipsum.com/",
       "id": 14
-    },
-    {
-      "author": "JK Rowen",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 15
-    },
-    {
-      "author": "JK Rowen",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 16
-    },
-    {
-      "author": "Smith J",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla",
-      "source": "https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router",
-      "id": 17
-    },
-    {
-      "author": "Tyler McGinis",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus ",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 18
-    },
-    {
-      "author": "Sam Smith",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus e",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 24
     }
   ]
 }

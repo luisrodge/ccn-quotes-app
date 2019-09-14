@@ -45,16 +45,17 @@ const QuoteDetails = ({ history, match }) => {
         dispatch({ type: 'GET_QUOTE_SUCCESS', quote: res });
       })
       .catch(err => {
+        console.log("Sdsdsd")
         dispatch({ type: 'GET_QUOTE_FAILURE' });
       });
   }, [dispatch, quoteId, quoteObj]);
 
 
-  const deleteQuote = (quoteId) => {
+  const deleteQuote = (id) => {
     api
-      .del(`/quotes/${quoteId}`)
+      .del(`/quotes/${id}`)
       .then(res => {
-        dispatch({ type: 'DELETE_QUOTE_SUCCESS', quoteId });
+        dispatch({ type: 'DELETE_QUOTE_SUCCESS', quoteId: id });
         history.push('/')
       })
       .catch(err => {
