@@ -61,62 +61,6 @@
       "source": "https://en.wikipedia.org/wiki/Linus_Torvalds"
     },
     {
-      "history": {
-        "length": 50,
-        "action": "PUSH",
-        "location": {
-          "pathname": "/",
-          "search": "",
-          "hash": "",
-          "key": "q8lddl"
-        }
-      },
-      "location": {
-        "pathname": "/",
-        "search": "",
-        "hash": "",
-        "key": "q8lddl"
-      },
-      "match": {
-        "path": "/",
-        "url": "/",
-        "isExact": true,
-        "params": {}
-      },
-      "id": 11
-    },
-    {
-      "history": {
-        "length": 50,
-        "action": "POP",
-        "location": {
-          "pathname": "/",
-          "search": "",
-          "hash": "",
-          "key": "q8lddl"
-        }
-      },
-      "location": {
-        "pathname": "/",
-        "search": "",
-        "hash": "",
-        "key": "q8lddl"
-      },
-      "match": {
-        "path": "/",
-        "url": "/",
-        "isExact": true,
-        "params": {}
-      },
-      "id": 12
-    },
-    {
-      "author": "Luka",
-      "body": "https://stackoverflow.com/questions/26253351/correct-modification-of-state-arrays-in-reactjs",
-      "source": "https://stackoverflow.com/questions/26253351/correct-modification-of-state-arrays-in-reactjs",
-      "id": 13
-    },
-    {
       "author": "Sam Rivers",
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
       "source": "https://www.lipsum.com/",
@@ -145,36 +89,6 @@
       "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus ",
       "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
       "id": 18
-    },
-    {
-      "author": "Sample Author",
-      "body": "sdsdsdsd",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 19
-    },
-    {
-      "author": "adasd",
-      "body": "Sample\n",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 20
-    },
-    {
-      "author": "asdasd",
-      "body": "asdadasd",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 21
-    },
-    {
-      "author": "asdasdsasd",
-      "body": "adsadsd",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 22
-    },
-    {
-      "author": "JK Tolken",
-      "body": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "source": "https://tylermcginnis.com/react-router-programmatically-navigate/",
-      "id": 23
     },
     {
       "author": "Sam Smith",

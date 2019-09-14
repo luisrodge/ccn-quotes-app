@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-
 import { Edit, Trash, LinkExternal } from 'styled-icons/boxicons-regular';
 
 import { Row, Column, Anchor } from '../../components/ui';
@@ -11,7 +10,7 @@ const HeaderRow = styled(Row)`
   border-bottom: 1px solid #f7f7f7;
 `;
 
-const Header = ({ quote }) => {
+const Header = ({ quote, deleteQuote }) => {
   return (
     <HeaderRow>
       <Column>
@@ -25,7 +24,12 @@ const Header = ({ quote }) => {
           <Edit size={18} style={{ paddingRight: '5px' }} />
           Edit
           </Anchor>
-        <Anchor secondary href="#" style={{ marginLeft: '20px' }}>
+        <Anchor
+          href="#"
+          onClick={() => deleteQuote(quote.id)}
+          style={{ marginLeft: '20px' }}
+          secondary
+        >
           <Trash size={18} style={{ paddingRight: '5px' }} />
           Delete
           </Anchor>
@@ -36,6 +40,7 @@ const Header = ({ quote }) => {
 
 Header.propTypes = {
   quote: PropTypes.instanceOf(Object).isRequired,
+  deleteQuote: PropTypes.func.isRequired
 };
 
 export default Header;

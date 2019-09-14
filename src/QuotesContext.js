@@ -64,6 +64,15 @@ const reducer = (state, action) => {
         ...state,
         creatingQuote: false,
       };
+    case 'DELETE_QUOTE_SUCCESS': {
+      const {
+        quoteId,
+      } = action
+      return {
+        ...state,
+        quotes: state.quotes.filter(quote => quote.id !== quoteId)
+      };
+    }
     default:
       return state;
   }

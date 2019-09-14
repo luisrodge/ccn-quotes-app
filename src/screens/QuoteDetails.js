@@ -3,11 +3,9 @@ import styled from 'styled-components';
 import { Plus } from 'styled-icons/boxicons-regular';
 
 import { Row } from '../components/ui';
-import api from '../utils/api';
-
 import Header from './quoteDetails/Header';
 import Body from './quoteDetails/Body';
-
+import api from '../utils/api';
 import { QuotesContext } from '../QuotesContext';
 
 const NewIcon = styled(Plus)`
@@ -28,13 +26,12 @@ const QuoteWrapper = styled.div`
   height: 100%;
 `;
 
-const QuoteDetails = ({ match }) => {
+const QuoteDetails = ({ history, match }) => {
   const [state, dispatch] = useContext(QuotesContext);
 
   const { quotes, fetchingQuote, quoteError, quote } = state;
 
   const quoteId = match.params.id;
-
   const quoteObj = quotes.find(quote => quote.id == quoteId);
 
   useEffect(() => {
@@ -52,6 +49,18 @@ const QuoteDetails = ({ match }) => {
       });
   }, [dispatch, quoteId, quoteObj]);
 
+
+  const deleteQuote = (quoteId) => {
+    api
+      .del(`/quotes/${quoteId}`)
+      .then(res => {
+        dispatch({ type: 'DELETE_QUOTE_SUCCESS', quoteId });
+        history.push('/')
+      })
+      .catch(err => {
+      });
+  }
+
   return (
     <QuoteWrapper>
       {fetchingQuote ? (
@@ -59,7 +68,7 @@ const QuoteDetails = ({ match }) => {
       ) : (
           quoteError === '' ? (
             <React.Fragment>
-              <Header quote={quote} />
+              <Header quote={quote} deleteQuote={deleteQuote} />
               <Body quote={quote} />
             </React.Fragment>
           ) : (
