@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import api from '../utils/api';
 import theme from '../utils/theme';
@@ -19,6 +18,15 @@ const SearchBar = styled.input`
   ::placeholder {
     color: #fff;
   }
+`;
+
+const BodyPreview = styled.small`
+  font-family: ${props => props.theme.fonts.secondary};
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: ${props => props.theme.spacing.xs};
+  color: ${props => props.theme.colors.grayAlt};
 `;
 
 const Quotes = () => {
@@ -47,7 +55,7 @@ const Quotes = () => {
           <StyledLink to="/"><Title>Quotes</Title></StyledLink>
         </Column>
         <Column width="50px" justify="flex-end">
-          <Title>10</Title>
+          <Title>{quotes.length}</Title>
         </Column>
       </Row>
       <Row padding={`${theme.spacing.sm}`}>
@@ -59,7 +67,9 @@ const Quotes = () => {
             <StyledLink to={`/quotes/${quote.id}`}>
               <p>{quote.author}</p>
             </StyledLink>
-            <small>This is some dummy short text</small>
+            <BodyPreview>
+              {quote.body}
+            </BodyPreview>
           </ListItem>
         ))}
       </List>

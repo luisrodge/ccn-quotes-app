@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import { Plus } from 'styled-icons/boxicons-regular';
+import { Link } from 'react-router-dom';
 
 import { Row } from '../components/ui';
 import Header from './quoteDetails/Header';
@@ -17,8 +18,11 @@ const NewIcon = styled(Plus)`
   position: absolute;
   bottom: 0px;
   right: 0;
-  z-index: 999;
+  transition: all 0.3s ease 0s;
   cursor: pointer;
+  &:hover {
+    background-color: ${props => props.theme.colors.lightBlue};
+  }
 `;
 
 const QuoteWrapper = styled.div`
@@ -78,7 +82,9 @@ const QuoteDetails = ({ history, match }) => {
               </Row>
             )
         )}
-      <NewIcon size={30} />
+      <Link to="/">
+        <NewIcon size={30} />
+      </Link>
     </QuoteWrapper>
   )
 }
