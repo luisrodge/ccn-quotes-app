@@ -34,7 +34,7 @@ const Quotes = () => {
 
   useEffect(() => {
     api
-      .get(`/quotes`)
+      .get(`/quotes?_sort=author&_order=asc`)
       .then(res => {
         dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: res });
       })

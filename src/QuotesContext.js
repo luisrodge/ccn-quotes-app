@@ -55,7 +55,7 @@ const reducer = (state, action) => {
       } = action
       return {
         ...state,
-        quotes: [...state.quotes, quote],
+        quotes: [quote, ...state.quotes],
         creatingQuote: false,
       };
     }
