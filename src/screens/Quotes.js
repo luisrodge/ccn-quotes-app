@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
+import parse from 'parse-link-header'
 
 import api from '../utils/api';
 import theme from '../utils/theme';
@@ -34,9 +35,11 @@ const Quotes = () => {
 
   useEffect(() => {
     api
-      .get('/quotes')
+      .get('/quotes?_page=1&_limit=5')
       .then(({ data, headers }) => {
         console.log(headers.link)
+        const parsedLink = parse(headers.link)
+        console.log(parsedLink)
         dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: data });
       })
       .catch(err => {
