@@ -1,3 +1,5 @@
+import React from 'react';
+
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -28,7 +30,7 @@ const Label = styled.label`
   position: relative;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(({ primary, secondary, ...props }) => <Link {...props} />)`
   font-family: ${props => props.theme.fonts.secondary};
   color: ${props =>
     props.secondary && props.theme.colors.gray ||

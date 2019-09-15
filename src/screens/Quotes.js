@@ -36,6 +36,7 @@ const Quotes = () => {
     api
       .get(`/quotes?_sort=author&_order=asc`)
       .then(res => {
+        console.log(res);
         dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: res });
       })
       .catch(err => {
@@ -73,6 +74,9 @@ const Quotes = () => {
           </ListItem>
         ))}
       </List>
+      <Row paddingX={`${theme.spacing.sm}`}>
+        Load More...
+      </Row>
     </React.Fragment>
   )
 }
