@@ -21,7 +21,7 @@ const request = (method, url, data) => {
       }
     })()
       .then((res) => {
-        resolve(res.data);
+        resolve(res);
       })
       .catch((err) => {
         reject(err.response);

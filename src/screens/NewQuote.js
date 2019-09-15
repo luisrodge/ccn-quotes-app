@@ -11,10 +11,10 @@ const NewQuote = ({ history }) => {
   const createQuote = (values, setSubmitting) => {
     api
       .post('/quotes', values)
-      .then(res => {
-        dispatch({ type: 'CREATE_QUOTE_SUCCESS', quote: res });
+      .then(({ data }) => {
+        dispatch({ type: 'CREATE_QUOTE_SUCCESS', quote: data });
         setSubmitting(false);
-        history.push(`/quotes/${res.id}`)
+        history.push(`/quotes/${data.id}`)
       })
       .catch(err => {
         dispatch({ type: 'CREATE_QUOTE_FAILURE' });

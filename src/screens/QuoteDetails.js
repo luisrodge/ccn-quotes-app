@@ -45,11 +45,10 @@ const QuoteDetails = ({ history, match }) => {
     }
     api
       .get(`/quotes/${quoteId}`)
-      .then(res => {
-        dispatch({ type: 'GET_QUOTE_SUCCESS', quote: res });
+      .then(({ data }) => {
+        dispatch({ type: 'GET_QUOTE_SUCCESS', quote: data });
       })
       .catch(err => {
-        console.log("Sdsdsd")
         dispatch({ type: 'GET_QUOTE_FAILURE' });
       });
   }, [dispatch, quoteId, quoteObj]);

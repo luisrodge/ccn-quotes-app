@@ -32,10 +32,10 @@ const EditQuote = ({ history, match }) => {
   const updateQuote = (values, setSubmitting) => {
     api
       .put(`/quotes/${quote.id}`, values)
-      .then(res => {
-        dispatch({ type: 'UPDATE_QUOTE_SUCCESS', quote: res });
+      .then(({ data }) => {
+        dispatch({ type: 'UPDATE_QUOTE_SUCCESS', quote: data });
         setSubmitting(false);
-        history.push(`/quotes/${res.id}`)
+        history.push(`/quotes/${data.id}`)
       })
       .catch(err => {
         setSubmitting(false); setSubmitting(false);

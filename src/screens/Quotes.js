@@ -34,10 +34,10 @@ const Quotes = () => {
 
   useEffect(() => {
     api
-      .get(`/quotes?_sort=author&_order=asc`)
-      .then(res => {
-        console.log(res);
-        dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: res });
+      .get('/quotes')
+      .then(({ data, headers }) => {
+        console.log(headers.link)
+        dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: data });
       })
       .catch(err => {
         console.log(err);
