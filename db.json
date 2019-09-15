@@ -1,7 +1,7 @@
 {
   "quotes": [
     {
-      "author": "Billy Conor",
+      "author": "Billy J Conor Walton",
       "body": "Before you judge a man, walk a mile in his shoes. After that who cares?... He’s a mile away and you’ve got his shoes!",
       "source": "http://billyconnolly.com/",
       "id": 1
@@ -65,6 +65,12 @@
       "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
       "source": "https://www.lipsum.com/",
       "id": 14
+    },
+    {
+      "author": "Bill Gates",
+      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      "source": "https://www.blindtextgenerator.com/lorem-ipsum",
+      "id": 15
     }
   ]
 }

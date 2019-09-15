@@ -30,7 +30,6 @@ const Label = styled.label`
 
 const StyledLink = styled(Link)`
   font-family: ${props => props.theme.fonts.secondary};
-  color: ${props => props.secondary ? props.theme.colors.gray : props.theme.colors.lightBlue};
   color: ${props =>
     props.secondary && props.theme.colors.gray ||
     props.primary && props.theme.colors.blue ||
@@ -40,7 +39,7 @@ const StyledLink = styled(Link)`
   &:hover, &:focus {
     text-decoration: none;
     color: ${props =>
-    props.secondary && props.theme.colors.gray ||
+    props.secondary && props.theme.colors.blue ||
     props.primary && props.theme.colors.blue ||
     '#fff'
   };

@@ -68,20 +68,18 @@ const QuoteDetails = ({ history, match }) => {
 
   return (
     <QuoteWrapper>
-      {fetchingQuote ? (
-        <p>loading...</p>
-      ) : (
-          quoteError === '' ? (
-            <React.Fragment>
-              <Header quote={quote} deleteQuote={deleteQuote} />
-              <Body quote={quote} />
-            </React.Fragment>
-          ) : (
-              <Row>
-                <h2>{quoteError}</h2>
-              </Row>
-            )
-        )}
+      {!fetchingQuote &&
+        quoteError === '' ? (
+          <React.Fragment>
+            <Header quote={quote} deleteQuote={deleteQuote} />
+            <Body quote={quote} />
+          </React.Fragment>
+        ) : (
+          <Row>
+            <h2>{quoteError}</h2>
+          </Row>
+        )
+      }
       <Link to="/">
         <NewIcon size={30} />
       </Link>
