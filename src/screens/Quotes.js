@@ -6,7 +6,7 @@ import queryString from 'query-string';
 import api from '../utils/api';
 import theme from '../utils/theme';
 import { Row, Column, List, ListItem, Title, StyledLink } from '../components/ui';
-
+import QuotesList from './quotes/QuotesList';
 import { QuotesContext } from '../QuotesContext';
 
 const SearchBar = styled.input`
@@ -22,13 +22,10 @@ const SearchBar = styled.input`
   }
 `;
 
-const BodyPreview = styled.small`
-  font-family: ${props => props.theme.fonts.secondary};
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-top: ${props => props.theme.spacing.xs};
-  color: ${props => props.theme.colors.grayAlt};
+const EmptyWrapper = styled.div`
+  background: ${props => props.theme.colors.lightBlue};
+  padding: ${props => props.theme.spacing.sm};
+  margin-top: ${props => props.theme.spacing.sm};
 `;
 
 const Quotes = ({ location }) => {
@@ -51,9 +48,9 @@ const Quotes = ({ location }) => {
       });
   }, [dispatch]);
 
-  const { loading, quotes, nextLink } = state;
+  const { fetchingQuotes, quotes } = state;
 
-  if (loading) return null;
+  if (fetchingQuotes) return null;
 
   return (
     <React.Fragment>
@@ -65,21 +62,19 @@ const Quotes = ({ location }) => {
           <Title>{quotes.length}</Title>
         </Column>
       </Row>
-      <Row padding={`${theme.spacing.sm}`}>
-        <SearchBar placeholder="Search..." />
-      </Row>
-      <List>
-        {quotes.map(quote => (
-          <ListItem key={quote.id}>
-            <StyledLink to={`/quotes/${quote.id}`}>
-              <p>{quote.author}</p>
-            </StyledLink>
-            <BodyPreview>
-              {quote.body}
-            </BodyPreview>
-          </ListItem>
-        ))}
-      </List>
+      {quotes.length &&
+        <Row padding={`${theme.spacing.sm}`}>
+          <SearchBar placeholder="Search..." />
+        </Row>
+      }
+      {quotes.length > 0 ? (
+        <QuotesList quotes={quotes} />
+      ) : (
+          <EmptyWrapper>
+            <h4>No Quotes</h4>
+          </EmptyWrapper>
+        )}
+
     </React.Fragment>
   )
 }
