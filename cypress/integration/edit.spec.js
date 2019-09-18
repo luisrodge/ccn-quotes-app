@@ -10,7 +10,7 @@ describe('Edit Quote Form', () => {
     cy.server();
 
     cy.route({
-      url: 'http://localhost:3001/quotes/90',
+      url: `http://localhost:3001/quotes/${quote.id}`,
       method: 'GET',
       response: quote,
       status: 200
@@ -27,7 +27,7 @@ describe('Edit Quote Form', () => {
   });
 
   it('Displays edit form with populated inputs', () => {
-    cy.visit('http://localhost:3000/quotes/90/edit');
+    cy.visit(`http://localhost:3000/quotes/${quote.id}/edit`);
 
     cy.get('[data-cy=edit-form]').should('be.visible');
 
@@ -39,7 +39,7 @@ describe('Edit Quote Form', () => {
   });
 
   it('Fails to submit given invalid input values', () => {
-    cy.visit('http://localhost:3000/quotes/90/edit');
+    cy.visit(`http://localhost:3000/quotes/${quote.id}/edit`);
 
     quote.author = '';
 
@@ -50,8 +50,8 @@ describe('Edit Quote Form', () => {
     })
   });
 
-  it('Submits successfully', () => {
-    cy.visit('http://localhost:3000/quotes/90/edit');
+  it('Submits and update successfully', () => {
+    cy.visit(`http://localhost:3000/quotes/${quote.id}/edit`);
 
     quote.author = 'J. Tolkien';
 
