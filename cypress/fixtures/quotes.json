@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "author": "J. R. R. Tolkien",
+    "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
+    "body": "This is some body text"
+  },
+  {
+    "id": 2,
+    "author": "J. R. R. Tolkien 2",
+    "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
+    "body": "This is some body text 2"
+  },
+  {
+    "id": 3,
+    "author": "J. R. R. Tolkien 3",
+    "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
+    "body": "This is some body text 3"
+  }
+]

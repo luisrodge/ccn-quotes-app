@@ -4,7 +4,6 @@ describe('New Quote Form', () => {
   const body = "This is some body text";
 
   beforeEach(() => {
-    cy.server()
     cy.visit('http://localhost:3000')
   });
 
