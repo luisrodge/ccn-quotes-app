@@ -19,8 +19,8 @@ describe('Edit Quote Form', () => {
   });
 
   it('Displays error element for invalid quote id', () => {
-    cy.server()
-    cy.visit('http://localhost:3000/quotes/quoteID')
+    cy.server();
+    cy.visit('http://localhost:3000/quotes/quoteID');
 
     cy.get('[data-cy=error-element]').should('be.visible');
     cy.get('[data-cy=error-element]').should('have.text', 'Something went wrong! Please try again later.');
