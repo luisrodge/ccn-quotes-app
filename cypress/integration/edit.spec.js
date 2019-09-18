@@ -49,4 +49,22 @@ describe('Edit Quote Form', () => {
       cy.get('[data-cy=error]').its('length').should('be.gte', 1)
     })
   });
+
+  it('Submits successfully', () => {
+    cy.visit('http://localhost:3000/quotes/90/edit');
+
+    quote.author = 'J. Tolkien';
+
+    cy.route({
+      url: `http://localhost:3001/quotes/${quote.id}`,
+      method: 'PUT',
+      body: quote,
+      response: quote,
+      status: 200
+    });
+
+    cy.get('[data-cy=edit-form]').submit();
+
+    cy.get('[data-cy=author-name]').should('have.text', quote.author);
+  });
 });
