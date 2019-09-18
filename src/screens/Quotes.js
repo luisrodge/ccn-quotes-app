@@ -1,6 +1,7 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import styled from 'styled-components';
-import parse from 'parse-link-header'
+import parse from 'parse-link-header';
+import queryString from 'query-string';
 
 import api from '../utils/api';
 import theme from '../utils/theme';
@@ -30,17 +31,19 @@ const BodyPreview = styled.small`
   color: ${props => props.theme.colors.grayAlt};
 `;
 
-const Quotes = () => {
+const Quotes = ({ location }) => {
   const [state, dispatch] = useContext(QuotesContext);
 
   useEffect(() => {
     api
-      .get('/quotes?_page=1&_limit=5')
+      .get(`/quotes`)
       .then(({ data, headers }) => {
-        console.log(headers.link)
-        const parsedLink = parse(headers.link)
-        console.log(parsedLink)
-        dispatch({ type: 'GET_QUOTES_SUCCESS', quotes: data });
+        // const parsedLink = parse(headers.link)
+        // console.log(parsedLink)
+        dispatch({
+          type: 'GET_QUOTES_SUCCESS',
+          quotes: data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -48,7 +51,7 @@ const Quotes = () => {
       });
   }, [dispatch]);
 
-  const { loading, quotes } = state;
+  const { loading, quotes, nextLink } = state;
 
   if (loading) return null;
 
@@ -77,9 +80,6 @@ const Quotes = () => {
           </ListItem>
         ))}
       </List>
-      <Row paddingX={`${theme.spacing.sm}`}>
-        Load More...
-      </Row>
     </React.Fragment>
   )
 }

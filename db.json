@@ -7,16 +7,16 @@
       "id": 1
     },
     {
-      "author": "Jeff Sickel",
+      "author": "Jeff Sickers",
       "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
       "source": "https://www.blindtextgenerator.com/lorem-ipsum",
       "id": 2
     },
     {
-      "id": 3,
-      "author": "Ken Thompson",
+      "author": "Ken K. Thompson",
       "body": "When in doubt, use brute force.",
-      "source": "https://en.wikipedia.org/wiki/Ken_Thompson"
+      "source": "https://en.wikipedia.org/wiki/Ken_Thompson",
+      "id": 3
     },
     {
       "id": 4,
