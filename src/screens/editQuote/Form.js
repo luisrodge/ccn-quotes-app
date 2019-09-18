@@ -47,7 +47,15 @@ const Form = ({ quote, updateQuote }) => (
                 border={errors.author && touched.author && `1px solid ${theme.colors.red}`}
                 data-cy="author-input"
               />
-              {errors.author && touched.author && <Text color={theme.colors.red} paddingT="10px">{errors.author}</Text>}
+              {errors.author && touched.author &&
+                <Text
+                  color={theme.colors.red}
+                  paddingT="10px"
+                  data-cy="error"
+                >
+                  {errors.author}
+                </Text>
+              }
             </Row>
             <Row marginB="30px">
               <label htmlFor="source">Source</label>
