@@ -14,7 +14,7 @@ const Header = ({ quote, deleteQuote }) => {
   return (
     <HeaderRow>
       <Column>
-        <Anchor secondary href={quote.source} target="blank">
+        <Anchor secondary href={quote.source} target="blank" data-cy="quote-source" >
           <LinkExternal size={18} style={{ paddingRight: '5px' }} />
           View author profile
           </Anchor>

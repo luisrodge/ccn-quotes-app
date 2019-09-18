@@ -74,7 +74,7 @@ const QuoteDetails = ({ history, match }) => {
             <Body quote={quote} />
           </React.Fragment>
         ) : (
-          <Row>
+          <Row data-cy="error-element">
             <h2>{quoteError}</h2>
           </Row>
         )

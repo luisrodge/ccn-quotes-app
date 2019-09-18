@@ -10,7 +10,7 @@ const Body = ({ quote }) => {
         <Title md data-cy="author-name">{quote.author}</Title>
       </Row>
       <Row marginT="30px">
-        <p style={{ lineHeight: '1.7rem' }}>{quote.body}</p>
+        <p style={{ lineHeight: '1.7rem' }} data-cy="quote-body">{quote.body}</p>
       </Row>
     </React.Fragment>
   )
