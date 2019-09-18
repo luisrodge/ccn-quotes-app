@@ -36,7 +36,7 @@ const Form = ({ quote, updateQuote }) => (
         handleSubmit,
         isSubmitting,
       }) => (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} data-cy="edit-form">
             <Row marginY="30px">
               <label htmlFor="author">Author</label>
               <Input
@@ -45,6 +45,7 @@ const Form = ({ quote, updateQuote }) => (
                 onBlur={handleBlur}
                 value={values.author}
                 border={errors.author && touched.author && `1px solid ${theme.colors.red}`}
+                data-cy="author-input"
               />
               {errors.author && touched.author && <Text color={theme.colors.red} paddingT="10px">{errors.author}</Text>}
             </Row>
@@ -56,6 +57,7 @@ const Form = ({ quote, updateQuote }) => (
                 onBlur={handleBlur}
                 value={values.source}
                 border={errors.source && touched.source && `1px solid ${theme.colors.red}`}
+                data-cy="source-input"
               />
               {errors.source && touched.source && <Text color={theme.colors.red} paddingT="10px">{errors.source}</Text>}
             </Row>
@@ -68,6 +70,7 @@ const Form = ({ quote, updateQuote }) => (
                 value={values.body}
                 rows={2}
                 border={errors.body && touched.body && `1px solid ${theme.colors.red}`}
+                data-cy="body-input"
               ></TextArea>
               {errors.body && touched.body && <Text color={theme.colors.red} paddingT="10px">{errors.body}</Text>}
             </Row>
