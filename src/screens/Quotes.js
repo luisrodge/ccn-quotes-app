@@ -1,11 +1,11 @@
-import React, { useEffect, useContext, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import styled from 'styled-components';
-import parse from 'parse-link-header';
-import queryString from 'query-string';
+// import parse from 'parse-link-header';
+// import queryString from 'query-string';
 
 import api from '../utils/api';
 import theme from '../utils/theme';
-import { Row, Column, List, ListItem, Title, StyledLink } from '../components/ui';
+import { Row, Column, Title, StyledLink } from '../components/ui';
 import QuotesList from './quotes/QuotesList';
 import { QuotesContext } from '../QuotesContext';
 
@@ -28,7 +28,7 @@ const EmptyWrapper = styled.div`
   margin-top: ${props => props.theme.spacing.sm};
 `;
 
-const Quotes = ({ location }) => {
+const Quotes = () => {
   const [state, dispatch] = useContext(QuotesContext);
 
   useEffect(() => {
@@ -43,7 +43,6 @@ const Quotes = ({ location }) => {
         });
       })
       .catch(err => {
-        console.log(err);
         dispatch({ type: 'GET_QUOTES_FAILURE' });
       });
   }, [dispatch]);
@@ -59,10 +58,10 @@ const Quotes = ({ location }) => {
           <StyledLink to="/"><Title>Quotes</Title></StyledLink>
         </Column>
         <Column width="50px" justify="flex-end">
-          <Title>{quotes.length}</Title>
+          <Title data-cy="quotes-count">{quotes.length}</Title>
         </Column>
       </Row>
-      {quotes.length &&
+      {quotes.length > 0 &&
         <Row padding={`${theme.spacing.sm}`}>
           <SearchBar placeholder="Search..." />
         </Row>
@@ -71,7 +70,7 @@ const Quotes = ({ location }) => {
         <QuotesList quotes={quotes} />
       ) : (
           <EmptyWrapper>
-            <h4>No Quotes</h4>
+            <h4 data-cy="no-quotes">No Quotes</h4>
           </EmptyWrapper>
         )}
 
