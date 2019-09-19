@@ -1,5 +1,6 @@
 describe('New Quote Form', () => {
   const quote = {
+    id: 4,
     author: 'J. R. R. Tolkien 4',
     source: 'https://en.wikipedia.org/wiki/J._R._R._Tolkien',
     body: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.'
@@ -51,9 +52,11 @@ describe('New Quote Form', () => {
   });
 
   it.only('Submits when required fields are present', () => {
+
     cy.route({
-      url: `http://localhost:3001/quotes/${quote.id}`,
+      url: `http://localhost:3001/quotes`,
       method: 'POST',
+      body: quote,
       response: quote,
       status: 200
     });
