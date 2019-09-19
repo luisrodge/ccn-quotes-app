@@ -1,12 +1,6 @@
 {
   "quotes": [
     {
-      "author": "Billy J Conor Walton",
-      "body": "Before you judge a man, walk a mile in his shoes. After that who cares?... He’s a mile away and you’ve got his shoes!",
-      "source": "http://billyconnolly.com/",
-      "id": 1
-    },
-    {
       "author": "Jeff Sickers",
       "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.",
       "source": "https://www.blindtextgenerator.com/lorem-ipsum",
@@ -107,78 +101,6 @@
       "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo l",
       "source": "https://www.blindtextgenerator.com/lorem-ipsum",
       "id": 21
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 22
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 23
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 24
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 25
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 26
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 27
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 28
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 29
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 30
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 31
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 32
-    },
-    {
-      "author": "J. R. R. Tolkien 4",
-      "body": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit 4.",
-      "source": "https://en.wikipedia.org/wiki/J._R._R._Tolkien",
-      "id": 33
     }
   ]
 }

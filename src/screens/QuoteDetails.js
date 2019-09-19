@@ -66,7 +66,7 @@ const QuoteDetails = ({ history, match }) => {
   }
 
   return (
-    <QuoteWrapper>
+    <QuoteWrapper data-cy="quote-body">
       {!fetchingQuote &&
         quoteError === '' ? (
           <React.Fragment>

@@ -29,6 +29,7 @@ const Header = ({ quote, deleteQuote }) => {
           onClick={() => deleteQuote(quote.id)}
           style={{ marginLeft: '20px' }}
           secondary
+          data-cy="delete-link"
         >
           <Trash size={18} style={{ paddingRight: '5px' }} />
           Delete
