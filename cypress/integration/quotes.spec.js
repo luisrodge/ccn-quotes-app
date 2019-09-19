@@ -1,5 +1,5 @@
 describe('Quotes List', () => {
-  it('Displays empty element when no quotes present', () => {
+  it('Displays empty message when no quotes are present', () => {
     cy.visit(`http://localhost:3000/quotes`);
 
     cy.server()
